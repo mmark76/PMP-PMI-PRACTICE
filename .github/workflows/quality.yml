@@ -1,0 +1,27 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Validate dashboard content
+        run: python -B scripts/validate_dashboard.py
+
+      - name: Build production site
+        run: python -B scripts/build_site.py
