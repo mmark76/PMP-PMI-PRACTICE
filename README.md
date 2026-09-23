@@ -14,6 +14,12 @@ The dashboard presents a PMBOK 6 predictive foundation: Triple Constraint, 5 Pro
 
 The interface follows the Markellos Ecosystem Project Dashboard pattern: project identity, project Assistant placeholder, GR/EN controls, ecosystem return, Light/Dark, Settings, Info, responsive layout and local-only appearance preferences.
 
+## Analytics
+
+Google Analytics 4 is configured with Measurement ID `G-DK5WN8TH3Z`, shared with the Markellos Ecosystem. Traffic for this dashboard can be isolated in GA4 with the `Host name` dimension set to `pmp-practice.markellosecosystem.com`.
+
+Consent Mode defaults analytics and advertising storage to denied. Visitors may choose necessary-only storage or explicitly enable analytics storage. Advertising storage, Google signals and ad personalization remain disabled.
+
 ## Validation
 
 GitHub Actions validates the source and confirms that a production build can be generated. Deployment is intentionally separate from GitHub Actions.
