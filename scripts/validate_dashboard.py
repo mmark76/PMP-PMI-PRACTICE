@@ -13,6 +13,11 @@ required = [
     "EVM",
     "Process vs Procedure",
     "PMP Assistant",
+    "G-DK5WN8TH3Z",
+    "googletagmanager.com/gtag/js",
+    "analytics_storage",
+    "consent-all",
+    "consent-necessary",
 ]
 for item in required:
     if item not in html:
