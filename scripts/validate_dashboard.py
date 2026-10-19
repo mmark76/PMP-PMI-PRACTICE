@@ -13,15 +13,23 @@ required = [
     "EVM",
     "Process vs Procedure",
     "PMP Assistant",
-    "G-DK5WN8TH3Z",
-    "googletagmanager.com/gtag/js",
-    "analytics_storage",
-    "consent-all",
-    "consent-necessary",
+    "https://analytics.markellosecosystem.com/v1/script.js",
+    "Cookie-less analytics",
+    "analytics-notice-close",
 ]
 for item in required:
     if item not in html:
         raise SystemExit(f"Missing required content: {item}")
+
+for retired_analytics_marker in (
+    "googletagmanager.com",
+    "G-DK5WN8TH3Z",
+    "analytics_storage",
+    "consent-all",
+    "consent-necessary",
+):
+    if retired_analytics_marker in html:
+        raise SystemExit(f"Retired analytics marker remains: {retired_analytics_marker}")
 
 section = html.split('<section id="processes"', 1)[1].split('</section>', 1)[0]
 if section.count('class="process-card"') != 10:
