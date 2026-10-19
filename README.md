@@ -16,9 +16,9 @@ The interface follows the Markellos Ecosystem Project Dashboard pattern: project
 
 ## Analytics
 
-Google Analytics 4 is configured with Measurement ID `G-DK5WN8TH3Z`, shared with the Markellos Ecosystem. Traffic for this dashboard can be isolated in GA4 with the `Host name` dimension set to `pmp-practice.markellosecosystem.com`.
+This dashboard uses the Markellos Ecosystem's cookie-less aggregate analytics collector. It records only hourly aggregate page views by domain and country so the administrator can understand traffic; it does not store cookies, IP addresses, page paths, referrers, browser data, visitor identifiers or interaction events.
 
-Consent Mode defaults analytics and advertising storage to denied. Visitors may choose necessary-only storage or explicitly enable analytics storage. Advertising storage, Google signals and ad personalization remain disabled.
+The analytics notice is informational. Closing it does not enable, disable or otherwise change measurement.
 
 ## Validation
 
