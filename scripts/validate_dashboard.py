@@ -16,6 +16,7 @@ required = [
     "https://analytics.markellosecosystem.com/v1/script.js",
     "Cookie-less analytics",
     "analytics-notice-close",
+    "markellos.pmp-dashboard.analytics-notice-dismissed.v1",
 ]
 for item in required:
     if item not in html:
@@ -44,5 +45,11 @@ for control in ("assistant-button", "language-gr", "language-en", "theme-toggle"
 
 if "prefers-reduced-motion" not in html or "localStorage" not in html:
     raise SystemExit("Accessibility or local appearance preference contract missing")
+
+# Closing the notice is a local display preference, not an analytics opt-in.
+if "notice.hidden=localStorage.getItem(noticeKey)==='1'" not in html:
+    raise SystemExit("Analytics notice must honor its saved dismissal after refresh")
+if "localStorage.setItem(noticeKey,'1')" not in html:
+    raise SystemExit("Closing the analytics notice must save the dismissal locally")
 
 print("dashboard validation passed: 10 Knowledge Areas, 49 processes")

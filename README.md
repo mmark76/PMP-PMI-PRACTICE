@@ -18,7 +18,7 @@ The interface follows the Markellos Ecosystem Project Dashboard pattern: project
 
 This dashboard uses the Markellos Ecosystem's cookie-less aggregate analytics collector. It records only hourly aggregate page views by domain and country so the administrator can understand traffic; it does not store cookies, IP addresses, page paths, referrers, browser data, visitor identifiers or interaction events.
 
-The analytics notice is informational. Closing it does not enable, disable or otherwise change measurement.
+The analytics notice is informational. It appears on a first visit and remembers a dismissal in local browser storage so it does not reappear after refresh or later visits on the same browser. Clearing site data or using another browser resets the notice. Closing it does not enable, disable or otherwise change measurement.
 
 ## Validation
 
